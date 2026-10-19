@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Qualificação Térmica - Padrão Comprehense</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	<style>
+		body { background-color: #f8f9fa; }
+		.header-bar { background: #1a365d; color: white; padding: 15px 0; }
+		.card-form { border-radius: 10px; border: 1px solid #e2e8f0; }
+		.section-title { font-weight: bold; color: #2b6cb0; border-bottom: 2px solid #ebf8ff; padding-bottom: 5px; }
+	</style>
+</head>
+<body>
+	<div class="header-bar mb-4">
+		<div class="container d-flex justify-content-between align-items-center">
+			<h5 class="mb-0 fw-bold">Sistema RQT - Engenharia Clínica</h5>
+			<a href="/logout" class="btn btn-outline-light btn-sm">Sair</a>
+		</div>
+	</div>
+	<div class="container mb-5">
+		<form action="/formulario" method="POST" enctype="multipart/form-data">
+			<div class="card card-form p-4 mb-4 bg-white">
+				<h6 class="section-title mb-3">1. Dados do Cliente / Instituição</h6>
+				<div class="row g-3">
+					<div class="col-md-6"><label class="form-label small fw-bold">Nome da Instituição / Cliente</label><input type="text" name="cliente_nome" class="form-control" value="HOSPITAL UNIVERSITÁRIO WALTER CANTÍDIO" required></div>
+					<div class="col-md-6"><label class="form-label small fw-bold">Local da Instalação / Setor</label><input type="text" name="cliente_setor" class="form-control" value="FARMÁCIA CLÍNICA HUWC" required></div>
+					<div class="col-md-6"><label class="form-label small fw-bold">Endereço</label><input type="text" name="cliente_endereco" class="form-control" value="RUA PASTOR SAMUEL MUNGUBA, 1290 - RODOLFO TEÓFILO"></div>
+					<div class="col-md-3"><label class="form-label small fw-bold">Cidade / Estado</label><input type="text" name="cliente_cidade" class="form-control" value="FORTALEZA - CEARÁ"></div>
+					<div class="col-md-3"><label class="form-label small fw-bold">CEP</label><input type="text" name="cliente_cep" class="form-control" value="60430-372"></div>
+				</div>
+			</div>
+			<div class="card card-form p-4 mb-4 bg-white">
+				<h6 class="section-title mb-3">2. Identificação do Equipamento</h6>
+				<div class="row g-3">
+					<div class="col-md-4"><label class="form-label small fw-bold">Descrição do Equipamento</label><input type="text" name="equip_descricao" class="form-control" value="REFRIGERADOR FARMACIA VERTICAL" required></div>
+					<div class="col-md-2"><label class="form-label small fw-bold">TAG</label><input type="text" name="tag" class="form-control" value="08633" required></div>
+					<div class="col-md-3"><label class="form-label small fw-bold">Nº de Série</label><input type="text" name="serie" class="form-control" value="291801084" required></div>
+					<div class="col-md-3"><label class="form-label small fw-bold">Modelo</label><input type="text" name="modelo" class="form-control" value="CSV-500" required></div>
+					<div class="col-md-3"><label class="form-label small fw-bold">Fabricante</label><input type="text" name="fabricante" class="form-control" value="ELBER" required></div>
+					<div class="col-md-3"><label class="form-label small fw-bold">Nº de Patrimônio</label><input type="text" name="patrimonio" class="form-control" value="442360"></div>
+					<div class="col-md-3"><label class="form-label small fw-bold">Capacidade (L)</label><input type="text" name="capacidade" class="form-control" value="500"></div>
+					<div class="col-md-3"><label class="form-label small fw-bold">Faixa de Trabalho</label><input type="text" name="faixa_trabalho" class="form-control" value="2°C à 8°C"></div>
+					<div class="col-md-3"><label class="form-label small fw-bold">Tensão / Potência / Corrente</label><input type="text" name="eletrica" class="form-control" value="220V / 426W / 1.9A"></div>
+					<div class="col-md-3"><label class="form-label small fw-bold">Nº do Relatório (RQT)</label><input type="text" name="num_relatorio" class="form-control" value="26.5834"></div>
+					<div class="col-md-3"><label class="form-label small fw-bold">Data de Início / Término</label><input type="text" name="data_ensaio" class="form-control" value="23/07/2026 a 31/07/2026"></div>
+				</div>
+			</div>
+			<div class="card card-form p-4 mb-4 bg-white">
+				<h6 class="section-title mb-3">3. Padrões Utilizados e Condições Ambientais</h6>
+				<div class="row g-3">
+					<div class="col-md-6"><label class="form-label small fw-bold">Datalogger / Sistema</label><input type="text" name="datalogger_info" class="form-control" value="DATALOGGER MAGETECH | S/N: T17920 | Cert: MC-250429"></div>
+					<div class="col-md-6"><label class="form-label small fw-bold">Termohigrômetro</label><input type="text" name="termo_info" class="form-control" value="TERMOHIGRÔMETRO | S/N: C210941510 | Cert: MC-260407"></div>
+					<div class="col-md-6"><label class="form-label small fw-bold">Condições Ambientais</label><input type="text" name="cond_ambiental" class="form-control" value="Temperatura: 22,3 °C | Umidade: 51,0 %UR"></div>
+				</div>
+			</div>
+			<div class="card card-form p-4 mb-4 bg-white">
+				<h6 class="section-title mb-3">4. Profissionais Responsáveis</h6>
+				<div class="row g-3">
+					<div class="col-md-6"><label class="form-label small fw-bold">Técnico Executor</label><input type="text" name="tecnico_executor" class="form-control" value="Joaquim Carvalho S. Junior" required></div>
+					<div class="col-md-6"><label class="form-label small fw-bold">Responsável Técnico / Engenheiro</label><input type="text" name="responsavel_tecnico" class="form-control" value="Bredon Mitterhofer Alves" required></div>
+				</div>
+			</div>
+			<div class="card card-form p-4 mb-4 bg-white">
+				<h6 class="section-title mb-3">5. Fotos do Equipamento e Ensaio</h6>
+				<div class="row g-3">
+					<div class="col-md-4"><label class="form-label small fw-bold">Foto 1</label><input type="file" name="foto_1" class="form-control form-control-sm" accept="image/*"></div>
+					<div class="col-md-4"><label class="form-label small fw-bold">Foto 2</label><input type="file" name="foto_2" class="form-control form-control-sm" accept="image/*"></div>
+					<div class="col-md-4"><label class="form-label small fw-bold">Foto 3</label><input type="file" name="foto_3" class="form-control form-control-sm" accept="image/*"></div>
+				</div>
+			</div>
+			<div class="card card-form p-4 mb-4 bg-white">
+				<h6 class="section-title mb-2">6. Leituras de Temperatura e Horários Manuais</h6>
+				<p class="text-muted small mb-3">Defina os horários das medições (ex: 19:00, 19:03, 19:06...) e preencha os valores para cada sensor T1 a T12.</p>
+				<div class="mb-4 p-3 bg-light rounded">
+					<h5 class="text-primary fw-bold fs-6 mb-2">A. Estabilidade Térmica</h5>
+					<div class="mb-3"><label class="form-label small fw-bold">Horários da Estabilidade (separados por vírgula)</label><input type="text" name="horarios_est" class="form-control" value="19:00, 19:03, 19:06, 19:09, 19:12, 19:15, 19:18, 19:21, 19:24, 19:27" required></div>
+					<div class="row g-2">{% for i in range(1, 13) %}<div class="col-md-4"><label class="form-label small text-secondary mb-1">Sensor T{{ i }}</label><input type="text" name="est_sensor_{{ i }}" class="form-control form-control-sm" placeholder="Ex: 5.0, 5.2, 4.9..."></div>{% endfor %}</div>
+				</div>
+				<div class="mb-4 p-3 bg-light rounded">
+					<h5 class="text-danger fw-bold fs-6 mb-2">B. Estudo de Subida (Porta Aberta)</h5>
+					<div class="mb-3"><label class="form-label small fw-bold">Horários da Subida (separados por vírgula)</label><input type="text" name="horarios_sub" class="form-control" value="20:52, 20:53, 20:54, 20:55, 20:56" required></div>
+					<div class="row g-2">{% for i in range(1, 13) %}<div class="col-md-4"><label class="form-label small text-secondary mb-1">Sensor T{{ i }}</label><input type="text" name="sub_sensor_{{ i }}" class="form-control form-control-sm" placeholder="Ex: 4.8, 5.5, 6.2..."></div>{% endfor %}</div>
+				</div>
+				<div class="p-3 bg-light rounded">
+					<h5 class="text-success fw-bold fs-6 mb-2">C. Estudo de Descida (Restabelecimento)</h5>
+					<div class="mb-3"><label class="form-label small fw-bold">Horários da Descida (separados por vírgula)</label><input type="text" name="horarios_desc" class="form-control" value="20:56, 20:57, 20:58, 20:59, 21:00" required></div>
+					<div class="row g-2">{% for i in range(1, 13) %}<div class="col-md-4"><label class="form-label small text-secondary mb-1">Sensor T{{ i }}</label><input type="text" name="desc_sensor_{{ i }}" class="form-control form-control-sm" placeholder="Ex: 6.2, 5.8, 5.1..."></div>{% endfor %}</div>
+				</div>
+			</div>
+			<div class="d-grid gap-2"><button type="submit" class="btn btn-primary btn-lg fw-bold">Gerar Relatório RQT Oficial em PDF</button></div>
+		</form>
+	</div>
+</body>
+</html>
